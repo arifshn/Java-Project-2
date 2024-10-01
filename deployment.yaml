@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: arifshn/portgres:latest  # Docker Hub'daki imaj ismi
+        ports:
+        - containerPort: 8080  # Uygulamanızın dinlediği port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    nodePort: 30001  # Yerel ağdan erişim için bir port numarası
+  selector:
+    app: myapp
+
