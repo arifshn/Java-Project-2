@@ -1,6 +1,6 @@
 # Kafka ve PostgreSQL Entegrasyonu Projesi
 
-Bu projede, Kafka kullanarak sipariş verilerini üreten ve PostgreSQL veritabanına kaydeden bir Java uygulaması geliştirdim. 
+Bu projede , Kafka kullanarak sipariş verilerini üreten ve PostgreSQL veritabanına kaydeden bir Java uygulaması geliştirdim. 
 
 ## Proje Yapısı
 
